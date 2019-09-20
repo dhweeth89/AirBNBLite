@@ -1,0 +1,31 @@
+<html>
+    {% extends "base.html" %}
+    {% block body %}    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <body>
+    <h1> <center> <font size = 32, color = #123456> {{ result }} Welcome to your user page </font> </center> </h1> 
+    
+    
+    <p> <center> <font size = 6, color= #32AB74> Here, you can manage your account </font> </center> </p>
+    
+    <form action="/propertyAddPage" method="post">
+    <center><button type="submit" class="btn btn-primary">Add Property to Listings</button></center>
+    </form>
+
+    <form action="/propertyYouRenting" method="get">
+    <center><button type="submit" class="btn btn-primary">View Properties You Are Currently Renting Out</button></center>
+    </form>
+    
+    <form action="/propertiesForSale" method="get">
+    <center><button type="submit" class="btn btn-primary">View Available Properties to Rent</button></center>
+    </form>
+
+    <form action="/propertiesYouRent" method="get">
+    <center><button type="submit" class="btn btn-primary">View Properties You Are Renting For Yourself</button></center>
+    </form>
+        
+    </body>
+    {% endblock %}
+</html>

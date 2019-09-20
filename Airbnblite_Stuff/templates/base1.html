@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title> Airbnblite </title>
+    </head>
+    <h1 style="color:red;"> AirbnbLite </h1>
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <p style="font-weight: bold"> Alerts: </p>
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  {% block body %}{% endblock %}
+</html>

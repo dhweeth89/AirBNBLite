@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h1> <center> <font size = 32, color = #123456> Properties Available for Rent </font> </center> </h1> 
+    
+    
+<p> <center> <font size = 6, color= #32AB74> Below are all properties you are currently listing out to others</font> </center> </p>
+
+{% for properties in allProperties %}
+
+{% if properties.ownerUsername == username %}
+
+<h1> <center> <b> Property Name: </b>{{properties.name}} </center> </h1>
+<p> <center> <b>Property Type: </b>{{properties.propertyType}}</center></p>
+<p> <center> <b>Rent Per Day: </b>{{properties.price}}</center></p>
+
+{% if properties.sold != "False" %}
+<p> <center> <b>Buyer: </b>{{properties.buyer}}</center></p>
+<form action="/cancelEntry" method="post">
+    <center><button type="submit" class="btn btn-primary", name="property" value="{{properties}}" disabled>Remove Listing</button></center>
+</form>
+
+{% else %}
+<p> <center> <b>Buyer: </b>Nobody</center></p>
+<form action="/cancelEntry" method="post">
+    <center><button type="submit" class="btn btn-primary", name="property" value="{{properties}}">Remove Listing</button></center>
+</form>
+{% endif %}
+
+
+{% endif %}
+
+{% endfor %}
+
+<form action="/userpage" method="post">
+    <button type="submit" class="btn btn-primary">Back to User Page</button>
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+<html>
+    {% extends "base1.html" %}
+    {% block body %}   
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <h1> <center> <font size = 32, color = #123456> Create Account </font> </center> </h1> 
+    
+    
+    <p> <center> <font size = 6, color= #32AB74> Please enter all necessary information in the relevant boxes below to create your account </font> </center> </p>
+    <form action="/addNewUser" method="post">
+    <div class="form-group">
+            <label for="exampleFormControlInput1">Username</label>
+            <input type="text" name="username" class="form-control" id="exampleFormControlInput1">
+    </div>
+    
+    <div class="form-group">
+                <label for="exampleFormControlInput2">Password</label>
+                <input type="text" name="password" class="form-control" id="exampleFormControlInput2">
+    </div>
+
+    <div class="form-group">
+            <label for="exampleFormControlInput3">First Name</label>
+            <input type="text" name="firstName" class="form-control" id="exampleFormControlInput3">
+    </div>
+
+    <div class="form-group">
+            <label for="exampleFormControlInput4">Last Name</label>
+            <input type="text" name="lastName" class="form-control" id="exampleFormControlInput4">
+    </div>
+
+    <div class="form-group">
+            <label for="exampleFormControlInput5">Email</label>
+            <input type="text" name="email" class="form-control" id="exampleFormControlInput5">
+    </div>
+
+    <center><button type="submit" class="btn btn-primary">Create Account</button></center>
+    </form>
+
+    
+    <form action="/" method="get">
+        <center><button type="submit" class="btn btn-primary">Back to Home Page</button></center>
+    </form>
+
+    {% endblock %}
+</html>
